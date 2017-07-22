@@ -163,6 +163,17 @@ var plugins = [
     async: false,
     modes: ['realtime']
   },
+  {
+    name: 'Slackbot',
+    description: 'Sends advice to Slack-Channel.',
+    slug: 'slack',
+    async: false,
+    modes: ['realtime','advice'],
+    dependencies: [{
+      module: 'slackbots',
+      version: '1.0.2'
+   }],
+  },
 ];
 
 module.exports = plugins;
