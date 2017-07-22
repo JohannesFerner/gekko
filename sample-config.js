@@ -322,6 +322,16 @@ config.campfire = {
   account: ''
 }
 
+// if you want to have a slack reporter also in UI-Mode add this also to web/routes/baseConfig.js
+config.slack = {
+    enabled: true,
+    token: 'XXX',
+    channel: '#trading-bot',
+    botName: 'tradingbot',
+    icon_emoji: ':moneybag:',
+    sendStartMessage: true
+}
+
 config.redisBeacon = {
   enabled: false,
   port: 6379, // redis default
