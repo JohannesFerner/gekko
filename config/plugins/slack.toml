@@ -1,0 +1,11 @@
+enabled = true
+
+# Send 'Gekko starting' message if true
+sendMessageOnStart = true
+
+# disable advice printout if it's soft
+token = "XX"
+channel = '#trading-bot'
+botName = 'tradingbot'
+icon_emoji = ':moneybag:'
+
