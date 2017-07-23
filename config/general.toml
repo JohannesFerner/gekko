@@ -6,5 +6,5 @@ adapter = 'sqlite'
 [watch]
 exchange = 'Poloniex'
 currency = 'USDT'
-asset = 'BTC'
+asset = 'ETH'
 

@@ -4,12 +4,13 @@ var _ = require('lodash');
 var talibError = 'Gekko was unable to configure talib indicator:\n\t';
 
 // Wrapper that executes a talib indicator
-var execute = function(callback, params) {
+var execute = function (callback, params) {
     return talib.execute(
         params,
-        function(result) {
-            if(result.error)
-                return callback(result.error);
+        function (err, result) {
+            if (err)
+                return callback(err);
+            // console.info('TALIB', result.result);
 
             callback(null, result.result);
         }
@@ -22,12 +23,12 @@ var verifyParams = (methodName, params) => {
     var requiredParams = methods[methodName].requires;
 
     _.each(requiredParams, paramName => {
-        if(!_.has(params, paramName))
+        if (!_.has(params, paramName))
             throw talibError + methodName + ' requires ' + paramName + '.';
 
         var val = params[paramName];
 
-        if(!_.isNumber(val))
+        if (!_.isNumber(val))
             throw talibError + paramName + ' needs to be a number';
     });
 }

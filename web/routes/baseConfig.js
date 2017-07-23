@@ -7,7 +7,7 @@ var config = {};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 config.silent = true;
-config.debug = false;
+config.debug = true;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING TRADING ADVICE
@@ -87,6 +87,16 @@ config.importer = {
     // NOTE: these dates are in UTC
     from: "2016-06-01 12:00:00"
   }
+}
+// if you want to have a slack reporter also in UI-Mode add this also to web/routes/baseConfig.js
+config.slack = {
+    enabled: true,
+    muteSoft: true,
+    token: 'xoxb-216168958967-MZinLzeS9wMKF1LbYUWlbAb0',
+    channel: 'trading-bot',
+    botName: 'tradingbot',
+    icon_emoji: ':moneybag:',
+    sendStartMessage: true
 }
 
 module.exports = config;

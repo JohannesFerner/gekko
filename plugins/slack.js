@@ -62,7 +62,7 @@ Actor.prototype.processAdvice = function (advice) {
     var strategyCandleSize = config.candleSize;
 
     var text = [
-        moment(advice.candle.start).format('YYYY MM DD - hh:mm'),
+        moment(advice.candle.start).format('YYYY-MM-DD HH:mm'),
         config.watch.exchange,
         '/',
         config.watch.asset,
